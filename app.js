@@ -35,6 +35,7 @@ app.post('/todo/add',(req,res,next) =>{
     }
     res.redirect('/');
   })
+
 })
 
 app.get('/',function(req,res){
@@ -49,13 +50,6 @@ app.get('/',function(req,res){
 });
 
 
-// <%- include '/views/partials/header.ejs' %>
-// <%- include '/views/partials/footer.ejs' %>
-// app.get('/views/index.ejs', function (req, res) {
-//  res.render('footer.ejs', {title: 'index'});
-// });
-//
-
 
 app.get('/todo/:id',function(req,res)
 {
@@ -69,7 +63,7 @@ app.get('/todo/:id',function(req,res)
     res.render('show',{doc:doc});
   });
 });
-////////////////////////////////////////////////////////////////////
+
 
 app.get('/todo/edit/:id',function(req,res)
 {
@@ -83,7 +77,7 @@ app.get('/todo/edit/:id',function(req,res)
     res.render('edit',{doc:doc});
   });
 });
-///////////////////////////////////////////////////////////////////////
+
 app.post('/todo/update/:id',(req,res,next) =>{
   todos.update({_id:ObjectId(req.params.id)},{$set:{title:req.body.title,description:req.body.description}},(err,document)=>{
     if(err)
@@ -93,7 +87,7 @@ app.post('/todo/update/:id',(req,res,next) =>{
     res.redirect('/');
   })
 })
-/////////////////////////////////////////////////////////////////////
+
 app.get('/todo/delete/:id',(req,res,next) =>{
   todos.remove({_id:ObjectId(req.params.id)},(err,document)=>{
     if(err)
@@ -103,7 +97,7 @@ app.get('/todo/delete/:id',(req,res,next) =>{
     res.redirect('/');
   })
 })
-////////////////////////////////////////////////////////////////////
+
 app.listen(3000,"localhost",(err)=>
 {
   if(err){
@@ -112,6 +106,3 @@ app.listen(3000,"localhost",(err)=>
   console.log("This server is listening");
   }
 })
-
-
-

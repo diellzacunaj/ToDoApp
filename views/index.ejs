@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
 
   <link rel="stylesheet" type="text/css" href="/css/main.css" />
+
   <script>
     $(document).ready(function() {
       $(".btn-primary").click(function() {
@@ -27,14 +28,14 @@
           <div class="col-md-3">
             <label>Todo Title:</label></div>
           <div class="col-md-9">
-            <input type="text" name="title" class="form-control" placeholder="Add Title" />
+            <input type="text" name="title" class="form-control" placeholder="Add Title" required />
           </div>
         </div>
         <div class="row">
           <div class="col-md-3">
             <label>Todo description:</label></div>
           <div class="col-md-9">
-            <textarea rows="5" name="description" class="form-control" placeholder="Add Description"></textarea>
+            <textarea rows="5" name="description" class="form-control" placeholder="Add Description" required></textarea>
           </div>
         </div>
         <br>
@@ -80,7 +81,7 @@
         <% }); %>
           </div>
     </ul>
-    
+
   </div>
 </body>
 
