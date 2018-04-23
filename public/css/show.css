@@ -1,0 +1,44 @@
+html, .container {
+  height: 100%;
+}
+
+
+body{
+  font-family:arial,sans-serif;
+  font-size:100%;
+  margin:3em;
+  background:#fff;
+  color:#fff;
+  height: 100%;
+  text-align: center;
+  align-items: center;
+  min-height:  100%;
+}
+p{
+    margin-top: 20px;
+  font-family:"Reenie Beanie",arial,sans-serif;
+  font-size:35px;
+}
+#note{
+text-decoration:none;
+  color:#000;
+  background:#ffc;
+  display:block;
+  height:40em;
+  width:40em;
+  padding:3em;
+  margin-top: 50%;
+  border: 1px solid black;
+}
+.shadow {
+  -moz-box-shadow:    1px 6px 5px 6px #ccc;
+  -webkit-box-shadow: 1px 6px 5px 6px #ccc;
+  box-shadow:        1px 6px 5px 6px #ccc;
+}
+div #note{
+  -o-transform:rotate(4deg);
+  -webkit-transform:rotate(4deg);
+  -moz-transform:rotate(4deg);
+  position:relative;
+  top:5px;
+}

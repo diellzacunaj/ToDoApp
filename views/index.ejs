@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <script>
+    $(document).ready(function() {
+      $(".btn-primary").click(function() {
+        $(".collapse").collapse('toggle');
+      });
+    });
+  </script>
+  <title>To do</title>
+</head>
+
+<body>
+  <div class="container">
+    <h3 class="heading">Add Todo</h3>
+    <form method="POST" action="/todo/add">
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo Title:</label></div>
+          <div class="col-md-9">
+            <input type="text" name="title" class="form-control" placeholder="Add Title" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo description:</label></div>
+          <div class="col-md-9">
+            <textarea rows="5" name="description" class="form-control" placeholder="Add Description"></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            <button class="btn btn-block btn-lg btn-primary" type="submit">Submit</button><br> </div>
+        </div>
+      </div>
+    </form>
+    <div >
+
+
+    <h3 class="heading"> Todo</h3>
+
+    <ul>
+
+
+      <% docs.map((doc)=>{ %>
+        <li>
+          <div class="wrap">
+            <div class="row">
+              <div class="col-md-6">
+                <button type="button" class="btn btn-default btn-lg" data-toggle="collapse" data-target="#<%= doc._id %>"><%= doc.title %></button>
+                <div id="<%= doc._id %>" class="collapse">
+                  <p>
+                    <%= doc.description %>
+                  </p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="col-md-4">
+                  <a href="/todo/<%= doc._id %>" class="btn btn-success " title="Show"><i class="fas fa-eye"></i></a></div>
+                <div class="col-md-4">
+                  <a href="/todo/edit/<%= doc._id %>" class="btn btn-primary" title="Edit"><i class="fas fa-edit"></i>
+                </a></div>
+                <div class="col-md-4">
+                  <a href="/todo/delete/<%= doc._id %>" class="btn btn-danger" title="Delete"><i class="fas fa-trash-alt"></i>
+                </a></div>
+              </div>
+            </div>
+        </li>
+        <% }); %>
+          </div>
+    </ul>
+    
+  </div>
+</body>
+
+</html>

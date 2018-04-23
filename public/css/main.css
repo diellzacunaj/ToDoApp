@@ -1,0 +1,55 @@
+body {
+  margin-top: 50px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 770px;
+  }
+}
+
+.row {
+  align-items: baseline;
+}
+
+input, textarea {
+  margin: 10px;
+  align-self: right;
+}
+
+.heading {
+  text-align: center;
+  padding: 20px;
+}
+
+.collapseA {
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+ul li div p {
+  padding: 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.wrap {
+  border: 1px solid #e6e6e6;
+  border-radius: 13px;
+  padding: 30px 40px;
+  margin-bottom: 20px;
+  background-color: #eeeeee;
+}
+
+ul li {
+  padding: 10px;
+  text-align: center;
+}
+
+button, a {
+  width: 100%;
+  padding-left: 10px;
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+
+  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <title>Edit To do</title>
+</head>
+<body>
+  <div class="container">
+    <h3 class="heading">Edit Todo</h3>
+    <form method="POST" action="/todo/update/<%= doc._id %>">
+      <div class="form-group">
+
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo Title:</label></div>
+          <div class="col-md-9">
+            <input type="text" name="title" class="form-control" placeholder="Add Title" value="<%= doc.title %>" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <label>Todo description:</label></div>
+          <div class="col-md-9">
+            <textarea rows="5" name="description" class="form-control" placeholder="Add Description"><%= doc.description %></textarea>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-md-9"></div>
+          <div class="col-md-3">
+            <button class="btn btn-block btn-lg btn-primary" type="submit">Update</button><br> </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</html>
